@@ -1,0 +1,443 @@
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+body{
+    margin: 0;
+    background-image: url(assets/Gradient_Background.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: monospace;
+    color: #fff;
+    
+}
+
+/*Graph*/
+.graph{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 60px;
+    text-shadow: 0 0 10px #0007;
+    letter-spacing: 20px;
+    width: max-content;
+}
+
+/* forward can keep last movement of animation */
+span{
+    opacity: 0;
+    animation: show_content 1s ease-in-out 1 forwards;
+}
+span:nth-child(2){
+    animation-delay: 1s;
+}
+span:nth-child(3){
+    animation-delay: 2s;
+}
+/* span:nth-child(4){
+    animation-delay: 3s;
+} */
+@keyframes show_content{
+    0%{
+        opacity: 0;
+        filter:blur(33px)
+    }100%{
+        opacity: 1; 
+        filter:blur(0px)
+    }
+
+}
+
+#svg{
+    position: relative;
+    z-index: -1;
+}
+
+/* blur for nodes next to each other */
+.ellipse:nth-child(2n){
+    filter:blur(5px)
+}
+
+.line{
+    opacity: 0.6;
+}
+
+
+/*Profile */
+.profile{
+    /* background-color: #ffff; */
+    width: 70vw;
+    /* position: absolute; */
+    /* top:50%;
+    left:50%; */
+    /* transform: translate(-50%,-50%); */
+    /* border-radius: 30px; */
+    min-height: 70vh;
+    overflow: hidden;  /*whatever outside box will hidden*/
+    display: grid;
+    /*3 column: 100-auto-300*/
+    grid-template-columns: 100px auto 300px;
+
+    box-sizing: border-box;
+    backdrop-filter: blur(100px);
+    background-color: #fff3;
+   
+}
+
+a.btn{
+    color: inherit; /* Inherit the color from the parent */
+    text-decoration: none; /* Remove the default underline */
+}
+
+a.movielink{
+    color: inherit; /* Inherit the color from the parent */
+    text-decoration: none; /* Remove the default underline */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+a.movielink:hover{
+    transform: scale(1.1); /* Increase size on hover */
+    color: #000000; /* Change color on hover */
+}
+
+
+
+.left{
+    text-align: center;
+    border-right: 1px solid rgb(230, 174, 219);
+    font-size: 15px;
+}
+
+.left ul{
+    padding:0;
+    list-style: none;
+}
+
+.left ul li i{
+    display: block;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.left ul li:hover i {
+    transform: scale(1.1); /* Increase size on hover */
+    color: #ee6c8f; /* Change color on hover */
+}
+
+.left li{
+    padding:20px 0;
+    color:#ffffff;
+}
+
+/* .left li.active{
+    color: #EF08A6;
+} */
+
+.center{
+    padding:20px;
+    border-right: 1px solid rgb(230, 174, 219);
+}
+
+.bigTitle{
+    font-size: xx-large;
+    font-weight: bold;
+    margin:20px 0;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.678);
+}
+
+.banner{
+    position: relative;
+}
+
+.banner img{
+    width:100%;
+    border-radius: 30px;
+    box-shadow: 0 20px 50px #b5b5b5;
+}
+
+.banner .profilecontent{
+    position: absolute;
+    top:20%;
+    left:30px;
+    color:#ffffff;
+    transform: translate(0,-50%);
+}
+
+/* .banner .title{
+    color:#FAB259;
+    font-size: xxx-large;
+    font-weight: bold;
+    text-shadow:  0 0 5px #000;
+} */
+
+.category{
+    list-style: none;
+    padding:20px;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+}
+
+.category li{
+    text-align: center;
+}
+
+.category i{
+    display: block;
+    width:50px;
+    height:50px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow:  0 10px 20px #c4beb7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:0 auto 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+}
+
+.category i:hover {
+    transform: scale(1.1); /* Increase size on hover */
+    box-shadow: 0 15px 30px #c4beb7; /* Increase box shadow on hover */
+}
+.category li:nth-child(1) i{
+   color:#98CEC0;
+}
+
+/* .category a {
+    text-decoration: none;  Remove default underline 
+} */
+
+.category li:nth-child(2) i{
+    color:#F8D17F;
+}
+.category li:nth-child(3) i{
+    color:#F46D5C;
+}
+.category li:nth-child(4) i{
+    color:#89CDDD;
+}
+.category li:nth-child(5) i{
+    color:#7C4968;
+}
+
+
+/* FAVORITE MOVEI */
+.favorite{
+    display: grid;
+    padding-left: 25px;
+    padding-top: 10px;
+    grid-template-columns: 25% 25% 25%;
+    column-gap: 40px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px #7dbbeb;
+}
+.favorite .img img{
+    border-radius: 10px;
+}
+
+/* USER ACCOUNT */
+.user{
+    text-align: center;
+    padding:50px 10px;
+} 
+
+.user img{
+    width:100px;
+    height:100px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 10px 10px #b5b5b5;
+}
+
+.user .userTitle{
+    font-size: large;
+    font-weight: bold;
+    padding:10px 0 0 0px;
+}
+
+.user ul{
+    padding:0px;
+    list-style: none;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.user .count{
+    font-size: x-large;
+}
+.user li:nth-child(1){
+    border-right: 1px solid #b5b5b5;
+}
+
+.friendlist{
+    padding:10px 20px;
+}
+
+.friendlist ul{
+    padding:0;
+    list-style: none;
+}
+
+.friendlist li{
+    display: grid;
+    grid-template-columns: 50px auto;
+    column-gap: 30px;
+    margin-bottom: 25px;
+}
+
+.friendlist li img{
+    width:50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    border:1px solid #F46D5C;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.friendlist li img:hover{
+    transform: scale(1.1); /* Increase size on hover */
+    box-shadow: 0 15px 80px #c4beb7; /*Increase box shadow on hover */
+}
+
+
+.friendlist .content .friendName{
+    font-weight: bold;
+    font-size: large;
+    margin-top:5px;
+}
+.friendlist .content .job{
+    opacity: 0.6;
+    margin-top:5px;
+}
+
+
+
+
+
+/*movie slide recommendation */
+.movieslide{
+    width: 70vw;
+    overflow: hidden;
+    /* position: absolute;
+    top: 200%; */
+    padding: 100px;
+    box-sizing: border-box;
+    backdrop-filter: blur(100px);
+    background-color: #fff3;
+    /* border-radius: 20px; */
+} 
+
+.movieslide::-webkit-scrollbar{
+    width: 0;
+}
+
+.title{
+    padding: 20px 0;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.678);
+    font-weight: 1000;
+    font-size: 20px;
+}
+
+.movieslide .form{
+    width: max-content;
+    --left: 0;
+    transform: translateX(var(--left));
+}
+
+.form .item{
+    width: 300px;
+    height: 300px;
+    display: inline-block;
+    margin-right: 20px;
+    transform: perspective(10px);
+    transform-style: preserve-3d;
+}
+
+.movieslide .form .item .content{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform .5s;
+}
+
+.movieslide .form .item .content .des{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    backdrop-filter: blur(20px);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:10px;
+    box-sizing: border-box;
+    /* font-size: 15px; */
+}
+
+.movieslide .form .item .content .des button{
+    background-color: #eee;
+    border: none;
+    border-radius: 10px;
+    font-size: small;
+}
+
+.movieslide .form.left .item .content{
+    transform: rotateY(-1deg) scale(0.8);
+}
+.movieslide .form.right .item .content{
+    transform: rotateY(1deg) scale(0.8);
+}
+.movieslide .form .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+button{
+    padding: 5px 20px;
+    border: 1px solid #b21065;
+    border-radius: 20px;
+    background-image: 
+        linear-gradient(to bottom, #fff9, transparent 50% 90%, #f5cbbc99), /* lớp trên cùng làm hiệu ứng phủ sáng */
+        repeating-linear-gradient(60deg,#bc058255 0 10px, transparent 10px 20px), /* lLớp này tạo ra một hiệu ứng đường kẻ lặp đi lặp lại */
+        linear-gradient(to bottom, #EF08A6, #ee6c8f); /* lớp dưới cùng làm màu nền */
+    color: #fff;
+    font-family: monospace;
+    font-weight: bold;
+    text-shadow: 0 1px 0 #efb7de;
+    box-shadow: 
+        0 10px 0 #0005,
+        0 5px 0 #BD1360,
+        0 4px 0 7px #fff,
+        0 0 30px 10px #e260ae;
+    transition: 0.5s;
+}
+button:active{
+    /* lThay đổi các thông số thứ 2 ( khỏng cách xuống phía dưới về 0 
+    và dịch chuyển button xuống bên dươi 5px tạo ra hiệu ứng nhấp chuột giống thật) */
+    box-shadow: 
+        0 0px 0 #0005,
+        0 0px 0 #BD1360,
+        0 0px 0 7px #fff,
+        0 0 30px 30px #e260ae;
+    transform: translateY(5px);
+}
+
+
+
+
+
+
