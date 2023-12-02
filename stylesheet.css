@@ -144,7 +144,7 @@ a.movielink:hover{
 }
 
 .bigTitle{
-    font-size: xx-large;
+    font-size: 25px;
     font-weight: bold;
     margin:20px 0;
     color: #fff;
@@ -185,6 +185,7 @@ a.movielink:hover{
 
 .category li{
     text-align: center;
+    font-size: 15px;
 }
 
 .category i{
@@ -238,9 +239,13 @@ a.movielink:hover{
     text-align: center;
     border-radius: 10px;
     box-shadow: 0 10px 20px #7dbbeb;
+    
 }
 .favorite .img img{
-    border-radius: 10px;
+    border-radius: 5px;
+    width: 70%;
+    height: 75%;
+    
 }
 
 /* USER ACCOUNT */
@@ -250,15 +255,15 @@ a.movielink:hover{
 } 
 
 .user img{
-    width:100px;
-    height:100px;
+    width:150px;
+    height:150px;
     object-fit: cover;
     border-radius: 20px;
     box-shadow: 0 10px 10px #b5b5b5;
 }
 
 .user .userTitle{
-    font-size: large;
+    font-size: 20px;
     font-weight: bold;
     padding:10px 0 0 0px;
 }
@@ -294,8 +299,8 @@ a.movielink:hover{
 }
 
 .friendlist li img{
-    width:50px;
-    height: 50px;
+    width:60px;
+    height: 60px;
     object-fit: cover;
     border-radius: 50%;
     border:1px solid #F46D5C;
@@ -343,8 +348,8 @@ a.movielink:hover{
     padding: 20px 0;
     color: #fff;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.678);
-    font-weight: 1000;
-    font-size: 20px;
+    font-weight: bold;
+    font-size: 35px;
 }
 
 .movieslide .form{
@@ -384,15 +389,9 @@ a.movielink:hover{
     align-items: center;
     padding:10px;
     box-sizing: border-box;
-    /* font-size: 15px; */
+    font-size: 20px;
 }
 
-.movieslide .form .item .content .des button{
-    background-color: #eee;
-    border: none;
-    border-radius: 10px;
-    font-size: small;
-}
 
 .movieslide .form.left .item .content{
     transform: rotateY(-1deg) scale(0.8);
@@ -406,35 +405,12 @@ a.movielink:hover{
     object-fit: cover;
 }
 
-button{
-    padding: 5px 20px;
-    border: 1px solid #b21065;
-    border-radius: 20px;
-    background-image: 
-        linear-gradient(to bottom, #fff9, transparent 50% 90%, #f5cbbc99), /* lớp trên cùng làm hiệu ứng phủ sáng */
-        repeating-linear-gradient(60deg,#bc058255 0 10px, transparent 10px 20px), /* lLớp này tạo ra một hiệu ứng đường kẻ lặp đi lặp lại */
-        linear-gradient(to bottom, #EF08A6, #ee6c8f); /* lớp dưới cùng làm màu nền */
-    color: #fff;
-    font-family: monospace;
-    font-weight: bold;
-    text-shadow: 0 1px 0 #efb7de;
-    box-shadow: 
-        0 10px 0 #0005,
-        0 5px 0 #BD1360,
-        0 4px 0 7px #fff,
-        0 0 30px 10px #e260ae;
-    transition: 0.5s;
+.star{  
+    text-shadow: 3px 3px 0 #efb7de;
+    font-size: 15px;
 }
-button:active{
-    /* lThay đổi các thông số thứ 2 ( khỏng cách xuống phía dưới về 0 
-    và dịch chuyển button xuống bên dươi 5px tạo ra hiệu ứng nhấp chuột giống thật) */
-    box-shadow: 
-        0 0px 0 #0005,
-        0 0px 0 #BD1360,
-        0 0px 0 7px #fff,
-        0 0 30px 30px #e260ae;
-    transform: translateY(5px);
-}
+
+
 
 
 
